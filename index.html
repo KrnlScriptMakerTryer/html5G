@@ -11,41 +11,53 @@
       font-family: Arial, sans-serif;
       color: white;
     }
-
-    header {
-      position: relative;
-      text-align: center;
-      padding: 20px 0;
-      font-size: 2em;
-      font-weight: bold;
-    }
-
     .logo {
       position: absolute;
-      top: 20px;
-      right: 20px;
+      top: 10px;
+      right: 10px;
       width: 80px;
       height: auto;
       border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
     }
-
     main {
       display: flex;
       justify-content: center;
       align-items: center;
-      height: calc(100vh - 80px);
+      height: 100vh;
+    }
+    button {
+      padding: 15px 30px;
+      background: white;
+      color: #6a0dad;
+      font-size: 1.2em;
+      font-weight: bold;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    button:hover {
+      transform: scale(1.05);
     }
   </style>
 </head>
 <body>
-  <header>
-    HTML5 Games for you!
-    <img src="https://i.imgur.com/GSJbXh5.png" alt="Logo" class="logo" />
-  </header>
-
+  <img src="https://i.imgur.com/GSJbXh5.png" alt="Logo" class="logo" />
   <main>
-    <p>Find the most goodest HTML5 Games!</p>
+    <button onclick="launchGame('2048/index.html')">🎮 Play 2048</button>
   </main>
+  <script>
+    function launchGame(path) {
+      const win = window.open();
+      fetch(path)
+        .then(res => res.text())
+        .then(html => {
+          win.document.write(html);
+          win.document.close();
+        })
+        .catch(err => alert('Game file not found: ' + path));
+    }
+  </script>
 </body>
 </html>
