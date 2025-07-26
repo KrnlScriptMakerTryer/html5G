@@ -3,32 +3,49 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My Website</title>
+  <title>HTML5 Games</title>
   <style>
     body {
       margin: 0;
-      background: #6a0dad; /* purple */
+      background: #6a0dad;
       font-family: Arial, sans-serif;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      height: 100vh;
       color: white;
     }
-    img.logo {
-      width: 150px;
-      height: auto;
-      margin-bottom: 20px;
-    }
-    h1 {
+
+    header {
+      position: relative;
+      text-align: center;
+      padding: 20px 0;
       font-size: 2em;
-      margin: 0;
+      font-weight: bold;
+    }
+
+    .logo {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 80px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    }
+
+    main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: calc(100vh - 80px);
     }
   </style>
 </head>
 <body>
-  <img src="logo.png" alt="Logo" class="logo" />
-  <h1>Welcome to My Website!</h1>
+  <header>
+    HTML5 Games for you!
+    <img src="https://i.imgur.com/GSJbXh5.png" alt="Logo" class="logo" />
+  </header>
+
+  <main>
+    <p>Find the most goodest HTML5 Games!</p>
+  </main>
 </body>
 </html>
